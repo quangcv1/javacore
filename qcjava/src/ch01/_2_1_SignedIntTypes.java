@@ -3,7 +3,7 @@ package ch01;
 /**
  * @Types: Byte, Short, Int, Long
  */
-public class _2_1_SignedIntType {
+public class _2_1_SignedIntTypes {
     public static void main(String[] args) {
         // BYTE 1 byte = 8 bit
         System.out.println("BYTE max: " + Byte.MAX_VALUE + " and min: " + Byte.MIN_VALUE);
@@ -28,5 +28,7 @@ public class _2_1_SignedIntType {
         Short s = 255;
         System.out.println("Short: " + s );
         System.out.println("Short: " + Short.toUnsignedInt(s)); //get an int val between 0 and 255
+
+        System.out.println(Byte.toUnsignedInt((byte )-127)); //256 - 127
     }
 }

@@ -6,7 +6,10 @@ public class InputDemo {
     public static void main(String[] args) {
         var in = new Scanner(System.in);
         System.out.println("What is your name?");
-        String name = in.nextLine();
+        String name = "";
+        while (name == "") {
+            name = in.nextLine();
+        }
         System.out.println("How old are you?");
         if (in.hasNextInt()) {
             int age = in.nextInt();

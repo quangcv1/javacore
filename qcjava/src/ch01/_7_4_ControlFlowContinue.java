@@ -2,7 +2,7 @@ package ch01;
 
 import java.util.Scanner;
 
-public class _7_3_ControlFlowContinue {
+public class _7_4_ControlFlowContinue {
     public static void main(String[] args) {
         var in = new Scanner(System.in);
         System.out.println("Pls enter positive number: ");

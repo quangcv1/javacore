@@ -1,21 +1,23 @@
+
 package ch01;
 
 import java.util.Scanner;
 
-public class _7_3_ControlFlowBreakLabel {
+public class _7_4_ControlFlowContinueLabel {
     public static void main(String[] args) {
         var in = new Scanner(System.in);
         var name = "";
         var age = 0;
-        System.out.println("pls enter age");
-        outer:
+        System.out.println("Pls enter your age: ");
+        exit:
         while (true) {
             name = "quang";
-            while(true) {
-                age = in.nextInt();
-                if(age == 37) break outer;
+            age = in.nextInt();
+            while (age != 37) {
                 System.out.println(name + " not " + age);
+                continue exit;
             }
+            break ;
         }
     }
 }

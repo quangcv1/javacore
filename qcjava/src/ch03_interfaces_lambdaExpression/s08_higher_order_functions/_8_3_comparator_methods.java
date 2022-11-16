@@ -1,11 +1,15 @@
-package ch03.sec08;
+package ch03_interfaces_lambdaExpression.s08_higher_order_functions;
 
 import java.util.Arrays;
 import java.util.Comparator;
+
 import static java.util.Comparator.*;
 
-
-public class ComparatorDemo {
+/**
+ *Comparator interface has a number of useful static methods that are higher order functions generating comparators.
+ *
+ */
+public class _8_3_comparator_methods {
     public static void main(String[] args) {
         Person[] people = {
                 new Person("George", "Washington"),
@@ -52,25 +56,42 @@ public class ComparatorDemo {
                 new Person("George", "Walker", "Bush"),
                 new Person("Barack", "Hussein", "Obama")
         };
-                
+        /**
+         * Comparing method
+         * @param: "key extractor" function that map a type T to a comparable type (such as String). The function is applied to the objs to be compared.
+         * @return: return keys.
+         * @example: a Person class has a method getLastName, then u can sort an array of Person objs by last name
+         */
         Arrays.sort(people, Comparator.comparing(Person::getName));
         System.out.println(Arrays.toString(people));
-        
+
+        /**
+         * thenComparing method
+         * @usecase: u can chain comparators with the thenComparing method to break ties
+         * @ex: sort an array of people by last name, then use the first name for people with the same last name.
+         */
         Arrays.sort(people,
-                Comparator.comparing(Person::getLastName)
-                .thenComparing(Person::getFirstName));
-        System.out.println(Arrays.toString(people));
-        
-        Arrays.sort(people, Comparator.comparing(Person::getName,
-                (s, t) -> s.length() - t.length()));
-        
-        Arrays.sort(people, Comparator.comparingInt(p -> p.getName().length()));
-        System.out.println(Arrays.toString(people));
-        
-        Arrays.sort(people, comparing(Person::getMiddleName
-                ,nullsFirst(naturalOrder())
-                )
+                Comparator
+                        .comparing(Person::getLastName)
+                        .thenComparing(Person::getFirstName)
         );
+        System.out.println(Arrays.toString(people));
+
+        Arrays.sort(
+                people,
+                Comparator.comparing(Person::getLastName,
+                        (s,t) -> s.length() - t.length()
+                        )
+        );
+        System.out.println(Arrays.toString(people));
+
+        Arrays.sort(people,
+                comparingInt(p -> p.getName().length())
+                );
+        System.out.println(Arrays.toString(people));
+
+        Arrays.sort(people, comparing(Person::getMiddleName,
+                nullsFirst(naturalOrder())));
         System.out.println(Arrays.toString(people));
 
         Arrays.sort(people, comparing(Person::getName,

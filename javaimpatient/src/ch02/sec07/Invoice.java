@@ -2,12 +2,22 @@ package ch02.sec07;
 
 import java.util.ArrayList;
 
+/**
+ * An <code>Invoice</code> obj represents an invoice with
+ * line items for each part of the order
+ * @author Quang
+ * @version 1.1
+ */
 public class Invoice {
     private static class Item { // Item is nested inside Invoice
         String description;
         int quantity;
         double unitPrice;
 
+        /**
+         * @param: no param
+         * @return: the price
+         */
         double price() { return quantity * unitPrice; }
         public String toString() { 
             return quantity + " x " + description + " @ $" + unitPrice + " each";

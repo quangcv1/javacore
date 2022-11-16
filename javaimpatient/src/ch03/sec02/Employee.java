@@ -23,4 +23,5 @@ public class Employee implements Person, Identified {
     }
 
     public int getId() { return Identified.super.getId(); }
+
 }

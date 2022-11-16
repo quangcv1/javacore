@@ -5,6 +5,8 @@ import java.util.ArrayList;
 /**
  * @static_nested_classes: private static vs public static
  * @description: Invoice class that bills for items, each of which has a description, quantity, and unit price => we can make Item into a nested class
+ * @why_static: why this inner/ static nested classes is declared "static"
+ * @what_happen_if_drop_static: consider a social network in which each member has friends that are also members.
  */
 public class Invoice {
     //why Item is declared static ?

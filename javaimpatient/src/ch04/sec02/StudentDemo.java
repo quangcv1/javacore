@@ -8,5 +8,12 @@ public class StudentDemo {
         System.out.println(s.getName());
         Named n = s;
         System.out.println(n.getName());
+        Named n1 = new Named() {
+            @Override
+            public String getName() {
+                return Named.super.getName();
+            }
+        };
+        System.out.println(n1.getName());
     }
 }

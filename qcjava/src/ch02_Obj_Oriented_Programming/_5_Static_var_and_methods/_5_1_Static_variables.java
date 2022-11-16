@@ -1,6 +1,8 @@
 package ch02_Obj_Oriented_Programming._5_Static_var_and_methods;
 
-
+/**
+ * @see ch02_Obj_Oriented_Programming._5_Static_var_and_methods.Employee
+ */
 
 public class _5_1_Static_variables {
     public static void main(String[] args) {
